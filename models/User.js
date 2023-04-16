@@ -17,7 +17,6 @@ userSchema.methods.toJSON = function() {
   const userObject = user.toObject();
   delete userObject.__v;
   delete userObject.tokens;
-  delete userObject._id;
 
   return userObject;
 };
