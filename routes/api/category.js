@@ -1,10 +1,22 @@
-const mongoose = require('mongoose');
+const express = require('express');
 
-const categorySchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  description: { type: String },
-});
+const router = express.Router();
+const {
+  createCategory,
+  getAllCategories,
+  getCategoryById,
+  updateCategoryById,
+  deleteCategoryById,
+} = require('../../controllers/categoryController');
 
-const Category = mongoose.model('Category', categorySchema);
+router.post('/category', createCategory);
 
-module.exports = Category;
+router.get('/category', getAllCategories);
+
+router.get('/category/:id', getCategoryById);
+
+router.put('/category/:id', updateCategoryById);
+
+router.delete('/category/:id', deleteCategoryById);
+
+module.exports = router;
