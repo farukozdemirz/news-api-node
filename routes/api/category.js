@@ -9,14 +9,14 @@ const {
   deleteCategoryById,
 } = require('../../controllers/categoryController');
 
-router.post('/category', createCategory);
+router.post('/create', createCategory);
 
-router.get('/category', getAllCategories);
+router.get('/getAll', getAllCategories);
 
-router.get('/category/:id', getCategoryById);
+router.get('/get/:id', getCategoryById);
 
-router.put('/category/:id', updateCategoryById);
+router.put('/update/:id', updateCategoryById);
 
-router.delete('/category/:id', deleteCategoryById);
+router.delete('/delete/:id', deleteCategoryById);
 
 module.exports = router;
