@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('morgan');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const connectDB = require('./utils/db');
 const routes = require('./routes');
 
@@ -15,6 +16,7 @@ connectDB();
 
 // Middlewares & configs setup
 app.use(logger('dev'));
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
